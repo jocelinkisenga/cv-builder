@@ -10,6 +10,7 @@ use App\Models\User;
 class Job extends Model
 {
     use HasFactory;
+    protected $fillable = ['user_id', 'job_title', 'company_name','job_description', 'started_at', 'ended_at' ];
 
     public function user(): BelongsTo
     {

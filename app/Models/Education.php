@@ -10,6 +10,7 @@ use App\Models\User;
 class Education extends Model
 {
     use HasFactory;
+    protected $fillable = ['user_id', 'educ_title', 'school','started_at','ended_at'];
 
     public function user(): BelongsTo
     {
