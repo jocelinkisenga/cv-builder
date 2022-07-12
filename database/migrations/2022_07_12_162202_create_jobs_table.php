@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->string('job_title');
+            $table->string('company_name');
+            $table->text('job_description');
+            $table->date('started_at');
+            $table->date('ended_at')->nullable();
             $table->timestamps();
         });
     }
