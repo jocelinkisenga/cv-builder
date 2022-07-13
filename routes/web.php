@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::middleware('auth')->prefix('profile')->as('profile.')->group(function(){
+    Route::get('/',[App\Http\Controllers\ProfileController::class,'index'])->name('show');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
